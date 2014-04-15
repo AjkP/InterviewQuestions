@@ -5,7 +5,7 @@
  * 
  */
 
-package IQLib.TreeLib;
+package iqLib.treeLib;
 
 public class TreeNode
 {
@@ -19,6 +19,11 @@ public class TreeNode
    {
       value = newValue;
       size = 1;
+   }
+
+   public int getValue()
+   {
+      return value;
    }
 
    public int getHeight()
@@ -43,8 +48,13 @@ public class TreeNode
    {
       return size;
    }
+   
+   public TreeNode getLeft()
+   {
+      return left;
+   }
 
-   public void setLeftChild(TreeNode newLeft)
+   public void setLeft(TreeNode newLeft)
    {
       left = newLeft;
 
@@ -53,8 +63,13 @@ public class TreeNode
          newLeft.parent = this;
       }
    }
+   
+   public TreeNode getRight()
+   {
+      return right;
+   }
 
-   public void setRightChild(TreeNode newRight)
+   public void setRight(TreeNode newRight)
    {
       right = newRight;
 
