@@ -78,4 +78,9 @@ public class TreeNode
          newRight.parent = this;
       }
    }
+
+   public TreeNode getParent()
+   {
+      return parent;
+   }
 }
