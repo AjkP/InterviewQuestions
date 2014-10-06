@@ -93,6 +93,10 @@ public class AddParenthesesAndOperations
          }
       }
       
+      // find number of negative numbers
+      // if number even do nothing
+      // if number odd then find the smallest 
+      
       return sb.substring(2);
    }
 }

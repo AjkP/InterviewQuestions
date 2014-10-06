@@ -9,33 +9,46 @@ package iqLib.sortLib;
 
 public class QuickSort
 {
+   public static void main(String[] args)
+   {
+      int[] myArr = {4, 2, 3, 5, 99, 20, 31, 4, 2, 11, 13, 15, 78, 8};
+      
+      Sort(myArr);
+      
+      for (int i = 0; i < myArr.length; ++i)
+      {
+         System.out.println(myArr[i]);
+      }
+   }
    public static void Sort(int[] numbers)
    {
-      quickSortHelper(numbers, 0, numbers.length);
+      quickSortHelper(numbers, 0, numbers.length - 1);
    }
    private static void quickSortHelper(int[] numbers, int start, int end)
    {
-      int index = partition(numbers, start, end);
-
-      quickSortHelper(numbers, start, index);
-      quickSortHelper(numbers, index + 1, end);
+      if (start < end)
+      {
+         int index = partition(numbers, start, end);
+         quickSortHelper(numbers, start, index - 1);
+         quickSortHelper(numbers, index, end);
+      }
    }
    
    private static int partition(int[] numbers, int start, int end)
    {
-      
       int i = start;
-      int j = end - 1;
-      int pivot = (start + end) / 2;
+      int j = end;
+      int pivot = -1 * (-1 *(start + end)) / 2;
+      int pVal = numbers[pivot];
       
       while (i <= j)
       {
-         while (numbers[i] < pivot)
+         while (numbers[i] < pVal)
          {
             ++i;
          }
 
-         while (numbers[j] > pivot)
+         while (numbers[j] > pVal)
          {
             --j;
          }
@@ -50,7 +63,7 @@ public class QuickSort
       
       return i;
    }
-   
+
    private static void swap(int[] numbers, int i, int j)
    {
       int temp = numbers[i];

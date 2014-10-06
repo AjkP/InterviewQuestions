@@ -25,6 +25,11 @@ public class TreeNode
    {
       return value;
    }
+   
+   public void setValue(int newValue)
+   {
+      value = newValue;
+   }
 
    public int getHeight()
    {
